@@ -1,0 +1,9 @@
+{
+	"name": "nitidatafactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0b1aa3ec-f77b-44c0-9695-221ac63fd4ae",
+		"tenantId": "7254648b-bc3f-4d27-93f5-8cf78f4c6378"
+	}
+}
