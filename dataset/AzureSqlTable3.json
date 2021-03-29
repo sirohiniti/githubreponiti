@@ -398,10 +398,6 @@
 				"precision": 18,
 				"scale": 4
 			}
-		],
-		"typeProperties": {
-			"schema": "dbo",
-			"table": "Medicare_Physician_Supplier3"
-		}
+		]
 	}
 }
