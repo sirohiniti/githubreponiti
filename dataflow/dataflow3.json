@@ -1,0 +1,39 @@
+{
+	"name": "dataflow3",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "loadedmedicaredata",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [],
+			"transformations": [
+				{
+					"name": "Window1"
+				},
+				{
+					"name": "DerivedColumn1"
+				},
+				{
+					"name": "Aggregate1"
+				},
+				{
+					"name": "Join1"
+				},
+				{
+					"name": "DerivedColumn2"
+				},
+				{
+					"name": "DerivedColumn3"
+				}
+			],
+			"script": "source(output(\n\t\tNational_Provider_Identifier as string,\n\t\tLast_Name_Organization_Name_of_the_Provider as string,\n\t\tFirst_Name_of_the_Provider as string,\n\t\tMiddle_Initial_of_the_Provider as string,\n\t\tCredentials_of_the_Provider as string,\n\t\tGender_of_the_Provider as string,\n\t\tEntity_Type_of_the_Provider as string,\n\t\tStreet_Address_1_of_the_Provider as string,\n\t\tStreet_Address_2_of_the_Provider as string,\n\t\tCity_of_the_Provider as string,\n\t\tZip_Code_of_the_Provider as string,\n\t\tProvider_RUCA as string,\n\t\tState_Code_of_the_Provider as string,\n\t\tCountry_Code_of_the_Provider as string,\n\t\tProvider_Type_of_the_Provider as string,\n\t\tMedicare_Participation_Indicator as string,\n\t\tNumber_of_HCPCS as decimal(18,3),\n\t\tNumber_of_Services as decimal(18,3),\n\t\tNumber_of_Medicare_Beneficiaries as decimal(18,3),\n\t\tTotal_Submitted_Charge_Amount as decimal(18,3),\n\t\tTotal_Medicare_Allowed_Amount as decimal(18,3),\n\t\tTotal_Medicare_Payment_Amount as decimal(18,3),\n\t\tTotal_Medicare_Standardized_Payment_Amount as decimal(18,3),\n\t\tDrug_Suppress_Indicator as string,\n\t\tNumber_of_HCPCS_Associated_With_Drug_Services as decimal(18,3),\n\t\tNumber_of_Drug_Services as decimal(18,3),\n\t\tNumber_of_Medicare_Beneficiaries_With_Drug_Services as decimal(18,3),\n\t\tTotal_Drug_Submitted_Charge_Amount as decimal(18,3),\n\t\tTotal_Drug_Medicare_Allowed_Amount as decimal(18,3),\n\t\tTotal_Drug_Medicare_Payment_Amount as decimal(18,3),\n\t\tTotal_Drug_Medicare_Standardized_Payment_Amount as decimal(18,3),\n\t\tMedical_Suppress_Indicator as string,\n\t\tNumber_of_HCPCS_Associated_With_Medical_Services as decimal(18,3),\n\t\tNumber_of_Medical_Services as decimal(18,3),\n\t\tNumber_of_Medicare_Beneficiaries_With_Medical_Services as decimal(18,3),\n\t\tTotal_Medical_Submitted_Charge_Amount as decimal(18,3),\n\t\tTotal_Medical_Medicare_Allowed_Amount as decimal(18,3),\n\t\tTotal_Medical_Medicare_Payment_Amount as decimal(18,3),\n\t\tTotal_Medical_Medicare_Standardized_Payment_Amount as decimal(18,3),\n\t\tAverage_Age_of_Beneficiaries as decimal(18,3),\n\t\tNumber_of_Beneficiaries_Age_Less_65 as decimal(18,3),\n\t\tNumber_of_Beneficiaries_Age_65_to_74 as decimal(18,3),\n\t\tNumber_of_Beneficiaries_Age_75_to_84 as decimal(18,3),\n\t\tNumber_of_Beneficiaries_Age_Greater_84 as decimal(18,3),\n\t\tNumber_of_Female_Beneficiaries as decimal(18,3),\n\t\tNumber_of_Male_Beneficiaries as decimal(18,3),\n\t\tNumber_of_Non_Hispanic_White_Beneficiaries as decimal(18,3),\n\t\tNumber_of_Black_or_African_American_Beneficiaries as decimal(18,3),\n\t\tNumber_of_Asian_Pacific_Islander_Beneficiaries as decimal(18,3),\n\t\tNumber_of_Hispanic_Beneficiaries as decimal(18,3),\n\t\tNumber_of_American_Indian_Alaska_Native_Beneficiaries as decimal(18,3),\n\t\tNumber_of_Beneficiaries_With_Race_Not_Elsewhere_Classified as decimal(18,3),\n\t\tNumber_of_Beneficiaries_With_Medicare_Only_Entitlement as decimal(18,3),\n\t\tNumber_of_Beneficiaries_With_Medicare_Medicaid_Entitlement as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Atrial_Fibrillation as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Alzheimers_Disease_or_Dementia as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Asthma as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Cancer as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Heart_Failure as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Chronic_Kidney_Disease as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Chronic_Obstructive_Pulmonary_Disease as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Depression as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Diabetes as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Hyperlipidemia as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Hypertension as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Ischemic_Heart_Disease as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Osteoporosis as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Rheumatoid_Arthritis_Osteoarthritis as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Schizophrenia_Other_Psychotic_Disorders as decimal(18,3),\n\t\tPercent_of_Beneficiaries_Identified_With_Stroke as decimal(18,3),\n\t\tAverage_HCC_Risk_Score_of_Beneficiaries as decimal(18,4)\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> source1\nsource1 window(desc(Number_of_Medicare_Beneficiaries, false),\n\tcum_ben = sum(Number_of_Medicare_Beneficiaries)) ~> Window1\nWindow1 derive(temp = \"temp\") ~> DerivedColumn1\nDerivedColumn1 aggregate(groupBy(temp),\n\ttotal_ben = sum(Number_of_Medicare_Beneficiaries)) ~> Aggregate1\nDerivedColumn1, Aggregate1 join(DerivedColumn1@temp == Aggregate1@temp,\n\tjoinType:'left',\n\tbroadcast: 'auto')~> Join1\nJoin1 derive(percent_ben = divide(cum_ben, total_ben)) ~> DerivedColumn2\nDerivedColumn2 derive(segment_ben = \r\ncase(percent_ben  <=0.2, 1,\r\n     percent_ben <=0.4, 2,\r\n       percent_ben <=0.6,  3,\r\n       percent_ben <=0.8,  4,\r\n       percent_ben <=1.0 , 5,0)\r\n) ~> DerivedColumn3"
+		}
+	}
+}
